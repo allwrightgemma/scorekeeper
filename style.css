@@ -2,3 +2,11 @@
   display: block;
   margin-top: 20px;
 }
+
+.winner {
+  color: green;
+}
+
+.loser {
+  color: red;
+}

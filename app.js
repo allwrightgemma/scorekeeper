@@ -6,7 +6,7 @@ const player2Score = document.querySelector("#player-two-score");
 const winningScoreSelect = document.querySelector("#playing-number");
 let player1points = 0;
 let player2points = 0;
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
 player1Button.addEventListener("click", function () {
@@ -14,6 +14,8 @@ player1Button.addEventListener("click", function () {
     player1points++;
     if (player1points === winningScore) {
       isGameOver = true;
+      player1Score.classList.add("winner");
+      player2Score.classList.add("loser");
     }
     player1Score.innerText = player1points;
   }
@@ -24,6 +26,8 @@ player2Button.addEventListener("click", function () {
     player2points++;
     if (player2points === winningScore) {
       isGameOver = true;
+      player2Score.classList.add("winner");
+      player1Score.classList.add("loser");
     }
     player2Score.innerText = player2points;
   }
@@ -42,4 +46,6 @@ function reset() {
   player2points = 0;
   player1Score.innerText = 0;
   player2Score.innerText = 0;
+  player1Score.classList.remove("winner", "loser");
+  player2Score.classList.remove("winner", "loser");
 }
