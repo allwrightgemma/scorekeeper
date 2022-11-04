@@ -2,20 +2,25 @@ const player1 = {
   button: document.querySelector("#player-one-button"),
   display: document.querySelector("#player-one-score"),
   score: 0,
+  gamesWonDisplay: document.querySelector("#player1-games"),
+  gamesWon: 0,
 };
 
 const player2 = {
   button: document.querySelector("#player-two-button"),
   display: document.querySelector("#player-two-score"),
   score: 0,
+  gamesWonDisplay: document.querySelector("#player2-games"),
+  gamesWon: 0,
 };
 
 const resetButton = document.querySelector("#reset-button");
-
 const winningScoreSelect = document.querySelector("#playing-number");
+const bestOfSelect = document.querySelector("#best-of");
 
 let winningScore = 3;
 let isGameOver = false;
+let totalGames = 0;
 
 function updateScore(player, opponent) {
   if (!isGameOver) {
@@ -26,6 +31,9 @@ function updateScore(player, opponent) {
       opponent.display.classList.add("loser");
       player.button.disabled = true;
       opponent.button.disabled = true;
+      player.gamesWon++;
+      player.gamesWonDisplay.innerText = player.gamesWon;
+      totalGames++;
     }
     player.display.innerText = player.score;
   }
@@ -44,12 +52,17 @@ winningScoreSelect.addEventListener("change", function () {
   reset();
 });
 
+bestOfSelect.addEventListener("change", function () {
+  totalGames = parseInt(this.value);
+});
+
 resetButton.addEventListener("click", reset);
 
 function reset() {
   isGameOver = false;
   for (let player of [player1, player2]) {
     player.score = 0;
+
     player.display.innerText = 0;
     player.display.classList.remove("winner", "loser");
     player.button.disabled = false;
