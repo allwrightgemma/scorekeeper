@@ -31,11 +31,12 @@ button {
   font-size: 20px;
 }
 
-.container {
+body {
   margin: 0 auto;
   max-width: 600px;
   font-family: "Roboto", sans-serif;
   color: #505353;
+  background-color: rgb(244, 244, 244);
 }
 
 .scoreboard {
@@ -44,6 +45,7 @@ button {
   margin: 0 auto;
   padding: 20px 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
 }
 
 .buttons {
