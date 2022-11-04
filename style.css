@@ -1,6 +1,55 @@
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 30px auto 50px;
+  text-align: center;
+}
+
+p {
+  margin: 25px 0;
+}
+
+label {
+  font-size: 24px;
+}
+
+select {
+  border-radius: 15px;
+  padding: 5px 8px;
+  font-size: 18px;
+}
+
+button {
+  padding: 15px 30px;
+  border-radius: 4px;
+
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: "Roboto", sans-serif;
+  color: #505353;
+}
+
+.scoreboard {
+  border: solid 1px #747878;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
 .buttons {
-  display: block;
-  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px auto 20px;
 }
 
 .winner {
@@ -9,4 +58,46 @@
 
 .loser {
   color: red;
+}
+
+#player-one-button {
+  background-color: #2745dc;
+  border: solid 1px #2745dc;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+#player-two-button {
+  background-color: #0b8333;
+  border: solid 1px #0b8333;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+#reset-button {
+  background-color: #c62424;
+  border: solid 1px #c62424;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+#player-one-button:hover {
+  background-color: #2038b0;
+  border: solid 1px #2745dc;
+  color: white;
+  cursor: pointer;
+}
+
+#player-two-button:hover {
+  background-color: #0a6929;
+  border: solid 1px #0b8333;
+  color: white;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  background-color: #9f1d1d;
+  border: solid 1px #c62424;
+  color: white;
+  cursor: pointer;
 }
